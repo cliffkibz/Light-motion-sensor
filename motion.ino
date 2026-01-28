@@ -7,11 +7,15 @@ void setup(){
 }
 void loop(){
   int sensorValue = digitalRead(SENSOR_PIN);
-  if (sensorValue == HIGH){//If movement is detected the bulb turns on
-    digitalWrite(RELAY_PIN, LOW); //stays on for 3 seconds
+  if (sensorValue == HIGH){
+    //movement detected bulb: ON
+    digitalWrite(RELAY_PIN, LOW); 
+    //bulb ON for 3 secs
+    delay(3000);
   } 
 
-  else { //else it stays off
+  else { 
+    //bulb: OFF
     digitalWrite(RELAY_PIN, HIGH);
   }
 }
